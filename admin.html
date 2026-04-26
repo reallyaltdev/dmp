@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMP | Admin Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-card, .admin-content {
+            background: #1a1a1a;
+            padding: 40px;
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .hidden { display: none; }
+
+        input {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background: #252525;
+            border: 1px solid #444;
+            color: white;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #d4af37;
+            color: black;
+            border: none;
+            padding: 12px 30px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .store-item {
+            background: #252525;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price { text-decoration: line-through; color: #ff4444; margin-right: 10px; }
+        .free { color: #00ff00; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div id="login-box" class="login-card">
+        <h2 style="color: #d4af37;">DMP ADMIN ACCESS</h2>
+        <input type="text" id="username" placeholder="Admin Name">
+        <input type="password" id="pin" placeholder="4-Digit PIN" maxlength="4">
+        <button onclick="checkAccess()">LOGIN</button>
+        <p id="error-msg" style="color: red; font-size: 0.8rem; margin-top: 10px;"></p>
+    </div>
+
+    <div id="admin-panel" class="admin-content hidden">
+        <h1 style="color: #d4af37;">Access Granted!</h1>
+        <p id="welcome-user"></p>
+        <hr style="border: 0.5px solid #444;">
+        
+        <h3>💎 ADMIN STORE (100% DISCOUNT)</h3>
+        
+        <div class="store-item">
+            <span>VIP Rank (Permanent)</span>
+            <div><span class="price">20€</span> <span class="free">0€ FREE</span></div>
+        </div>
+        <div class="store-item">
+            <span>Legendary Crate Key x10</span>
+            <div><span class="price">15€</span> <span class="free">0€ FREE</span></div>
+        </div>
+        <div class="store-item">
+            <span>Unban Pass</span>
+            <div><span class="price">50€</span> <span class="free">0€ FREE</span></div>
+        </div>
+
+        <button onclick="window.location.href='index.html'" style="background: #444; color: white;">Logout</button>
+    </div>
+
+    <script>
+        function checkAccess() {
+            const user = document.getElementById('username').value;
+            const pin = document.getElementById('pin').value;
+            const error = document.getElementById('error-msg');
+
+            // TU SI NASTAV SVOJE MENO A PIN
+            const validAdmins = ["Milankoteodor2", "FoxicekALT", "plsdonat14"];
+            const secretPin = "1234"; // Zmeň si PIN tu
+
+            if (validAdmins.includes(user) && pin === secretPin) {
+                document.getElementById('login-box').classList.add('hidden');
+                document.getElementById('admin-panel').classList.remove('hidden');
+                document.getElementById('welcome-user').innerText = "Logged in as: " + user;
+            } else {
+                error.innerText = "Invalid credentials!";
+            }
+        }
+    </script>
+</body>
+</html>
