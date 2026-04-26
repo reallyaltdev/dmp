@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMP Server | Build & Conquer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0f0f0f;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Horná lišta s malým logom */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+        }
+
+        .small-logo {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            margin-right: 15px;
+        }
+
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1587573089734-09cb99c5a0bb?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 5px solid #d4af37;
+        }
+
+        /* Logo v strede */
+        .main-logo {
+            width: 150px; /* Môžeš upraviť veľkosť podľa potreby */
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 5rem;
+            margin: 0;
+            color: #d4af37;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+            letter-spacing: 5px;
+        }
+
+        .ip-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 30px;
+            border: 2px dashed #d4af37;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .ip-box:hover {
+            background: rgba(212, 175, 55, 0.2);
+        }
+
+        section {
+            padding: 100px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .description-text {
+            white-space: pre-line;
+            font-size: 1.1rem;
+            color: #ccc;
+            text-align: center;
+        }
+
+        .partner-box {
+            background: #1a1a1a;
+            border-left: 10px solid #4a90e2;
+            padding: 40px;
+            text-align: center;
+            margin: 50px auto;
+            max-width: 800px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px;
+            background: #000;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 40px;
+            background: #d4af37;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <img src="logo.png" alt="Logo" class="small-logo">
+        <span style="font-weight: bold; font-size: 0.9rem;">DMP PROJECT</span>
+    </div>
+
+    <header>
+        <img src="logo.png" alt="DMP Logo" class="main-logo">
+        
+        <h1>DMP SERVER</h1>
+        <p>Build your civilization. Conquer your enemies.</p>
+        
+        <div class="ip-box" onclick="navigator.clipboard.writeText('known-contracting.gl.joinmc.link'); alert('IP copied!')">
+            known-contracting.gl.joinmc.link
+        </div>
+        <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 10px;">(Click to copy IP)</p>
+    </header>
+
+    <section>
+        <h2 style="text-align: center; color: #d4af37;">Welcome to the Frontier</h2>
+        <div class="description-text">
+            DMP is a survival world where every player has the power to shape history. 
+            Build your own house, establish a thriving village, or create an entire civilization. 
+            
+            Our server is heavily focused on PvP and strategic cooperation. 
+            You must be prepared to defend what is yours and work with others to survive.
+        </div>
+
+        <div class="partner-box">
+            <h3>Our Partner</h3>
+            <p>We officially cooperate with <strong>Stonetrails.cz</strong></p>
+        </div>
+    </section>
+
+    <section style="text-align: center;">
+        <a href="#" class="btn">Join our Discord</a>
+    </section>
+
+    <footer>
+        &copy; 2026 DMP Server. All rights reserved.
+    </footer>
+
+</body>
+</html>
